@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { 
+      margin: 0; 
+      font-family: "Figtree", Arial, sans-serif; 
+      color: #2a0a0a; 
+      line-height: 1.6; 
+      background: #faf6f3; 
+    }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3 { font-family: "Bodoni Moda", Georgia, serif; font-weight: 400; margin: 0; }
+
+    /* Layout Helper */
+    .wrap { 
+      max-width: 1000px; 
+      margin: 0 auto; 
+      padding: 0 20px; 
+    }
+    section { padding: 70px 0; }
+
+    /* Navigation Bar */
+    nav { 
+      position: sticky; 
+      top: 0; 
+      background: #4a0505; 
+      color: #fff; 
+      z-index: 100;
+    }
+    nav .wrap { 
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between; 
+      height: 70px; 
+    }
+    .logo { font-size: 1.4rem; }
+    nav ul { 
+      list-style: none; 
+      display: flex; 
+      gap: 10px; 
+      margin: 0; 
+      padding: 0; 
+    }
+    nav ul a { 
+      padding: 6px 14px; 
+      border-radius: 20px; 
+    }
+    nav ul a:hover { background: rgba(255, 255, 255, 0.2); }
+
+    /* Buttons / Pills */
+    .button { 
+      display: inline-block; 
+      padding: 12px 24px; 
+      border-radius: 30px; 
+      background: #e6d8d3; 
+      color: #4a0505; 
+      font-weight: 500;
+    }
+    .button.ghost { 
+      background: transparent; 
+      color: #fff; 
+      border: 1px solid #fff; 
+    }
+
+    /* Header Section */
+    header { background: #4a0505; color: #fff; padding: 60px 0; }
+    .header-content { 
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between; 
+      gap: 40px; 
+    }
+    .header-text { flex: 1; }
+    header h1 { font-size: 3.5rem; margin-bottom: 15px; }
+    .tag { 
+      display: inline-block; 
+      margin-bottom: 15px; 
+      padding: 6px 16px; 
+      border: 1px solid #fff; 
+      border-radius: 20px; 
+      font-size: 0.9rem;
+    }
+    header p { margin-bottom: 25px; max-width: 450px; }
+    .btns { display: flex; gap: 10px; }
+
+    /* Arch-shaped photo frame */
+    .arch { 
+      width: 280px; 
+      height: 350px; 
+      background: #e6d8d3; 
+      border-radius: 140px 140px 10px 10px; 
+      overflow: hidden; 
+      position: relative; 
+      flex-shrink: 0;
+    }
+    .arch img { 
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover; 
+      position: absolute; 
+      bottom: 0; 
+      left: 0;
+    }
+
+    /* Section Titles */
+    .title { font-size: 2.5rem; color: #4a0505; margin-bottom: 20px; }
+
+    /* About Section */
+    #about { background: #e6d8d3; }
+    .about-content { 
+      display: flex; 
+      align-items: center; 
+      gap: 50px; 
+    }
+    .about-text { flex: 1; }
+    .checks { padding-left: 20px; color: #4a0505; font-weight: 500; margin-top: 15px; }
+
+    /* Skills Section */
+    #skills { background: #f3e9e5; }
+    .skill-list { list-style: none; padding: 0; margin: 0; }
+    .skill-item { 
+      display: flex; 
+      justify-content: space-between; 
+      padding: 18px 0; 
+      border-bottom: 1px solid rgba(74, 5, 5, 0.2); 
+    }
+    .skill-item strong { 
+      font-family: "Bodoni Moda", Georgia, serif; 
+      font-size: 1.3rem; 
+      color: #4a0505; 
+      width: 150px;
+    }
+    .skill-item span { flex: 1; }
+
+    /* Projects Section */
+    .cards { 
+      display: flex; 
+      gap: 20px; 
+      flex-wrap: wrap; 
+    }
+    .card { 
+      background: #e6d8d3; 
+      border-radius: 16px; 
+      padding: 25px; 
+      flex: 1; 
+      min-width: 280px; 
+    }
+    .card h3 { font-size: 1.5rem; color: #4a0505; margin-bottom: 10px; }
+    .card p { margin-bottom: 15px; }
+    .card a { color: #4a0505; font-weight: 600; }
+
+    /* Contact Section */
+    #contact { background: #4a0505; color: #fff; }
+    .contact-content { 
+      display: flex; 
+      gap: 50px; 
+    }
+    .contact-text, form { flex: 1; }
+    #contact h2 { font-size: 3rem; margin-bottom: 15px; }
+    form { display: flex; flex-direction: column; gap: 15px; }
+    label { display: flex; flex-direction: column; gap: 5px; font-size: 0.9rem; }
+    input, textarea { 
+      font: inherit; 
+      color: #fff; 
+      background: rgba(255, 255, 255, 0.1); 
+      border: 1px solid rgba(255, 255, 255, 0.4); 
+      border-radius: 8px; 
+      padding: 10px; 
+    }
+
+    /* Footer */
+    footer { background: #4a0505; color: #cdb4ae; text-align: center; padding: 20px 0; font-size: 0.9rem; }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="wrap">
+      <a href="#home" class="logo"><strong>Trixie Maranan.</strong></a>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Header / Home Section -->
+  <header id="home">
+    <div class="wrap header-content">
+      <div class="header-text">
+        <h1>Hi there,<br>I'm Trixie Maranan.</h1>
+        <span class="tag">Information Technology Student &middot; ESL Teacher</span>
+        <p>Leveraging 5+ years of ESL teaching and HR leadership to bridge the gap between people and technology. Currently pursuing a BS in IT.</p>
+        <div class="btns">
+          <a href="#contact" class="button">Hire me</a>
+          <a href="#projects" class="button ghost">View projects</a>
+        </div>
+      </div>
+      <!-- Photo Container -->
+      <div class="arch">
+        <img src="profile.png" alt="Profile photo">
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- About Section -->
+    <section id="about">
+      <div class="wrap about-content">
+        <div class="arch">
+          <img src="profile.png" alt="Profile photo">
+        </div>
+        <div class="about-text">
+          <h2 class="title">About me</h2>
+          <p>I am an adaptive strategist blending years of experience in Education and Human Resources with a focus on Information Technology.</p>
+          <p>Currently, I am pursuing a BS in IT at the University of the Cordilleras, where I aim to bridge the gap between effective communication and digital innovation.</p>
+          <ul class="checks">
+            <li>5+ years of adaptive instruction and coaching.</li>
+            <li>Proven track record in HR management and team organization.</li>
+            <li>Focus on Web Technology, UI/UX design, and digital innovation.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <div class="wrap">
+        <h2 class="title">Skills</h2>
+        <ul class="skill-list">
+          <li class="skill-item">
+            <strong>HTML</strong>
+            <span>Structuring pages with clean, semantic markup.</span>
+          </li>
+          <li class="skill-item">
+            <strong>CSS</strong>
+            <span>Responsive layouts, colors, and typography.</span>
+          </li>
+          <li class="skill-item">
+            <strong>JavaScript</strong>
+            <span>Adding interactivity to web pages.</span>
+          </li>
+          <li class="skill-item">
+            <strong>PHP</strong>
+            <span>Building simple server-side features.</span>
+          </li>
+          <li class="skill-item">
+            <strong>MySQL</strong>
+            <span>Designing and querying relational databases.</span>
+          </li>
+          <li class="skill-item">
+            <strong>Git</strong>
+            <span>Tracking changes and managing project versions.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="wrap">
+        <h2 class="title">Projects</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Personal Website</h3>
+            <p>A simple multi-page website about myself, built with HTML and CSS.</p>
+            <a href="#">View project &rarr;</a>
+          </div>
+          <div class="card">
+            <h3>To-Do List App</h3>
+            <p>A JavaScript app that lets users add, complete, and delete daily tasks.</p>
+            <a href="#">View project &rarr;</a>
+          </div>
+          <div class="card">
+            <h3>Student Records System</h3>
+            <p>A PHP and MySQL application for storing and viewing student information.</p>
+            <a href="#">View project &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="wrap contact-content">
+        <div class="contact-text">
+          <h2>Let's work together.</h2>
+          <p>Have a project, a class, or a role in mind? Send me a message and I'll get back to you.</p>
+        </div>
+        <form action="#" method="post">
+          <label>Name
+            <input type="text" name="name" required>
+          </label>
+          <label>Email
+            <input type="email" name="email" required>
+          </label>
+          <label>Subject
+            <input type="text" name="subject">
+          </label>
+          <label>Message
+            <textarea name="message" rows="4" required></textarea>
+          </label>
+          <button type="submit" class="button" style="border: none; cursor: pointer;">Submit</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap">&copy; 2026 - Trixie Maranan</div>
+  </footer>
+
+</body>
+</html>
