@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - Trixie Maranan</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    line-height: 1.7;
+    background: #26648E;
+    color: #FFE3B3;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px 20px 60px;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    background: #FFE3B3;
+    padding: 10px 16px;
+    border-radius: 999px;
+    margin-bottom: 30px;
+  }
+  nav a {
+    color: #26648E;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 6px 16px;
+    border-radius: 999px;
+  }
+  nav a.about {
+    background: #26648E;
+    color: #FFE3B3;
+  }
+
+  .hero {
+    position: relative;
+    margin-bottom: 24px;
+  }
+  .hero img {
+    display: block;
+    width: 100%;
+    height: 260px;
+    border-radius: 20px;
+  }
+  .hero header {
+    position: absolute;
+    inset: 0 0 0 0;
+    padding: 10px 24px;
+    color: #1b4a6b ;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid #FFE3B3;
+    border-radius: 20px;
+    padding: 24px;
+  }
+
+  .intro {
+    grid-column: 1 / -1;
+    background: #FFE3B3;
+    color: #1b4a6b;
+  }
+
+  .card-full {
+    grid-column: 1 / -1;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    color: #53D2DC;
+    margin-bottom: 12px;
+  }
+
+  ul {
+    list-style: none;
+    display: grid;
+    gap: 12px;
+  }
+  
+  .info-list li {
+    padding-left: 12px;
+    border-left: 3px solid #53D2DC;
+  }
+  .info-list li strong {
+    display: block;
+    font-size: 0.8rem;
+    color: #53D2DC;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .hobbies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .hobbies li {
+    border: 1px solid #53D2DC;
+    color: #FFE3B3;
+    border-radius: 999px;
+    padding: 6px 18px;
+    font-size: 0.95rem;
+  }
+
+</style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html" class="about">About</a>
+    <a href="skills.html">Skills</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="hero">
+    <img src="img1.jpg" alt="Banner">
+    <header>
+      <h1>About Me</h1>
+    </header>
+  </div>
+
+  <main class="grid">
+    <section class="card intro">
+      <p>I am Trixie Maranan, an IT student specializing in Web Technology. I build clean, structured, and modern web applications with a focus on web design and functionality.</p>
+    </section>
+
+    <section class="card">
+      <h2>Educational Background</h2>
+      <ul class="info-list">
+        <li><strong>Degree Program</strong>BS in Information Technology</li>
+        <li><strong>Specialization</strong>Web Technology</li>
+        <li><strong>Academic Level</strong>3rd Year, University of the Cordilleras</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Career Goals</h2>
+      <ul class="info-list">
+        <li><strong>Full-Stack</strong>Master full-stack web and mobile application engineering.</li>
+        <li><strong>Accessibility</strong>Design accessible, high-performance web systems.</li>
+        <li><strong>Scalability</strong>Develop scalable software solutions for real-world impact.</li>
+      </ul>
+    </section>
+
+    <section class="card card-full">
+      <h2>Hobbies & Interests</h2>
+      <ul class="hobbies">
+        <li>Modern web trends & frameworks</li>
+        <li>Games on study breaks</li>
+        <li>Good Music</li>
+        <li>Travelling</li>
+        <li>Eating</li>
+      </ul>
+    </section>
+  </main>
+
+</body>
+</html>
